@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Organic Fruits UI</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Remix Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f8f7ef;
+      overflow-x:hidden;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      background:#ffd33d;
+      min-height:100vh;
+      padding:20px 0 80px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar-nav .nav-link{
+      color:#003d33;
+      font-size:18px;
+      font-weight:500;
+      margin-right:20px;
+    }
+
+    .navbar-nav .nav-link:hover{
+      color:#00695c;
+    }
+
+    .nav-icons i{
+      font-size:24px;
+      color:#003d33;
+      margin-left:18px;
+      cursor:pointer;
+    }
+
+    /* ===== HERO CONTENT ===== */
+    .hero-content{
+      margin-top:120px;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-content p{
+      color:#ff5a00;
+      font-weight:500;
+      margin-bottom:10px;
+      letter-spacing:1px;
+    }
+
+    .hero-content h1{
+      font-size:75px;
+      line-height:95px;
+      font-weight:700;
+      color:#004d40;
+    }
+
+    /* ===== MANGO IMAGE ===== */
+    .mango-img{
+      position:absolute;
+      top:70px;
+      right:60px;
+      width:340px;
+      z-index:1;
+    }
+
+    /* ===== FLOWERS ===== */
+    .flower{
+      position:absolute;
+      width:120px;
+      object-fit:contain;
+    }
+
+    .flower-1{
+      top:110px;
+      left:30px;
+    }
+
+    .flower-2{
+      top:100px;
+      right:430px;
+    }
+
+    .flower-3{
+      bottom:80px;
+      left:120px;
+    }
+
+    .flower-4{
+      bottom:80px;
+      left:790px;
+      transform: rotate(10deg);
+    }
+
+    .flower-5{
+      top:165px;
+      left:-10px;
+      transform: rotate(-310deg);
+    }
+
+    /* ===== CATEGORIES ===== */
+    .categories{
+      padding:70px 0;
+    }
+
+    .section-title{
+      font-size:40px;
+      font-weight:700;
+      color:#003d33;
+      margin-bottom:35px;
+    }
+
+    .category-card{
+      height:160px;
+      border-radius:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      transition:0.4s;
+    }
+
+    .category-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .category-card img{
+      width:70px;
+      margin-bottom:15px;
+    }
+
+    .category-card p{
+      font-size:20px;
+      font-weight:600;
+      color:#003d33;
+      margin:0;
+    }
+
+    .bg1{
+      background:#f3e89f;
+    }
+
+    .bg2{
+      background:#ffd739;
+    }
+
+    .bg3{
+      background:#f5b084;
+    }
+
+    .bg4{
+      background:#ffcf2f;
+    }
+
+    .bg5{
+      background:#d7ef79;
+    }
+
+    /* ===== PRODUCTS ===== */
+    .products{
+      padding-bottom:80px;
+    }
+
+    .product-title{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .product-title h2{
+      font-size:42px;
+      font-weight:700;
+      color:#003d33;
+    }
+
+    .product-card{
+      background:#fff;
+      border-radius:20px;
+      padding:18px;
+      transition:0.4s;
+      height:100%;
+    }
+
+    .product-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .product-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:16px;
+    }
+
+    .product-card h4{
+      margin-top:18px;
+      color:#003d33;
+      font-size:24px;
+      font-weight:600;
+      line-height:34px;
+    }
+
+    .product-card h5{
+      color:#00695c;
+      font-size:28px;
+      font-weight:700;
+      margin-top:10px;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery img{
+      width:100%;
+      height:280px;
+      object-fit:cover;
+      border-radius:20px;
+    }
+
+    .bottom-img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      border-radius:20px;
+      margin-top:20px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:992px){
+
+      .hero-content{
+        text-align:center;
+      }
+
+      .hero-content h1{
+        font-size:55px;
+        line-height:70px;
+      }
+
+      .mango-img{
+        position:static;
+        display:block;
+        margin:40px auto 0;
+        width:260px;
+      }
+
+      .flower{
+        width:80px;
+      }
+
+      .flower-2{
+        right:40px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero-content h1{
+        font-size:42px;
+        line-height:55px;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+      .product-title h2{
+        font-size:34px;
+      }
+
+      .flower{
+        display:none;
+      }
+
+    }
+    /* ================= ARRIVALS SECTION ================= */
+
+.arrival-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid #e5e5e5;
+  border-radius:15px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.arrival-card{
+  padding:30px;
+  border-right:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+  position:relative;
+  text-align:left;
+}
+
+.arrival-card:nth-child(3),
+.arrival-card:nth-child(6){
+  border-right:none;
+}
+
+.arrival-card:nth-child(4),
+.arrival-card:nth-child(5),
+.arrival-card:nth-child(6){
+  border-bottom:none;
+}
+
+.arrival-card img{
+  width:280px;
+  height:180px;
+  object-fit:contain;
+  display:block;
+  margin:auto;
+}
+
+.stars{
+  color:#f4b400;
+  font-size:35px;
+  margin:15px 0 10px;
+}
+
+.arrival-card h4{
+  font-size:24px;
+  color:#111;
+  margin-bottom:10px;
+}
+
+.arrival-card h5{
+  color:#e76f51;
+  font-size:28px;
+  font-weight:700;
+}
+
+.arrival-card button{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  width:48px;
+  height:48px;
+  border:none;
+  border-radius:50%;
+  background:#16a34a;
+  color:#fff;
+  font-size:18px;
+}
+
+/* ================= BANNER ================= */
+
+.banner-box{
+  background:#f7edd5;
+  border-radius:20px;
+  padding:5px;
+  min-height:220px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.banner-box h3{
+  font-size:28px;
+  color:#111;
+  margin-left: 30px;
+}
+
+.banner-box h1{
+  font-size:42px;
+  font-weight:700;
+  margin:10px 0;
+  margin-left: 30px;
+}
+
+.banner-box h4{
+  color:#e76f51;
+  font-size:32px;
+  font-weight:700;
+  margin-left: 30px;
+}
+
+.banner-box img{
+  width:260px;
+}
+
+.green-box{
+  background:#d7ebb0;
+}
+
+/* ================= CATEGORY GRID ================= */
+
+.category-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:0;
+  border:1px solid #e5e5e5;
+  border-radius:15px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.big-category{
+  grid-row:span 2;
+  border-right:1px solid #e5e5e5;
+}
+
+.big-category img{
+  width:520px;
+  height:350px;
+  object-fit:cover;
+}
+
+.small-category{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:30px;
+  border-right:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.small-category:nth-child(3),
+.small-category:nth-child(5){
+  border-right:none;
+}
+
+.small-category:nth-child(4),
+.small-category:nth-child(5){
+  border-bottom:none;
+}
+
+.small-category h4{
+  font-size:22px;
+  color:#111;
+}
+
+.small-category p{
+  color:gray;
+  margin-top:8px;
+}
+
+.small-category img{
+  width:130px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+  .arrival-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .arrival-grid{
+    grid-template-columns:1fr;
+  }
+
+  .arrival-card{
+    border-right:none !important;
+  }
+
+  .banner-box{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .banner-box img{
+    margin-top:20px;
+  }
+
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="container">
+
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg">
+
+        <a class="navbar-brand fw-bold fs-2 text-success" href="#">
+          Fresh
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navMenu">
+
+          <ul class="navbar-nav mx-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
+            </li>
+
+          </ul>
+
+          <div class="nav-icons">
+            <i class="ri-search-line"></i>
+            <i class="ri-shopping-cart-2-line"></i>
+          </div>
+
+        </div>
+
+      </nav>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
+
+        <p>100% PURE & ORGANIC</p>
+
+        <h1>
+          Fresh Mango <br>
+          Juice Just Fruit
+        </h1>
+
+      </div>
+
+      <!-- MANGO IMAGE -->
+      <img src="img.png" class="mango-img">
+
+      <!-- FLOWERS -->
+      <img src="img1.png" class="flower flower-1">
+      <img src="img2.png" class="flower flower-2">
+      <img src="img3.png" class="flower flower-3">
+      <img src="img5.png" class="flower flower-4">
+      <img src="img6.png" class="flower flower-5">
+
+    </div>
+
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Popular Categories
+      </h2>
+
+      <div class="row g-4">
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg1">
+            <img src="vag1.png" style="width: 100px;">
+            <p>Vegetables</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg2">
+            <img src="f1.png" style="width: 100px;">
+            <p>Fruits</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg3">
+            <img src="juices.png" style="width: 130px;">
+            <p>Juices</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg4">
+            <img src="fresh.png" style="width: 100px;">
+            <p>Organic</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg5">
+            <img src="h1.png" style="width: 100px;">
+            <p>Healthy</p>
+          </div>
+        </div>
+
+         <div class="col-lg-2 col-md-4 col-6">
+          <div class="category-card bg3">
+            <img src="ju.png" style="width: 70px;">
+            <p>Juices</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+
+    <div class="container">
+
+      <div class="product-title">
+        <h2>Top Product</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="cust.png" style="width: 250px;">
+
+            <h4>Fresh Cucumber</h4>
+
+            <h5>$5.89</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1580052614034-c55d20bfee3b?q=80&w=800&auto=format&fit=crop">
+
+            <h4>Organic Orange</h4>
+
+            <h5>$4.99</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1567375698348-5d9d5ae99de0?q=80&w=800&auto=format&fit=crop">
+
+            <h4>Green Beans</h4>
+
+            <h5>$3.49</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="peas.png">
+
+            <h4>Fresh Peas</h4>
+
+            <h5>$2.49</h5>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="products">
+
+    <div class="container" style="margin-top: -10px;">
+
+      <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="bell.png">
+
+            <h4>Bell Pepper</h4>
+
+            <h5>$3.22</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="grean.png">
+
+            <h4>Grean Pumpkin</h4>
+
+            <h5>$7.59</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="green_pumpkin.png">
+
+            <h4>Green Pumpkin</h4>
+
+            <h5>$3.49</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+
+            <img src="egg.png">
+
+            <h4>Organic Bringel</h4>
+
+            <h5>$5.49</h5>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery pb-5">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <img src="two.jpeg">
+        </div>
+
+        <div class="col-lg-4">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=900&auto=format&fit=crop">
+        </div>
+
+        <div class="col-lg-4">
+          <img src="orange.jpeg">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= BOTTOM OFFER SECTION ================= -->
+
+  <section class="pb-5">
+
+    <div class="container">
+
+      <div class="row g-4">
+
+        <!-- LEFT CARD -->
+        <div class="col-lg-6">
+
+          <div class="p-4 rounded-4 d-flex align-items-center justify-content-between"
+               style="background:#f5f5f5; min-height:230px;">
+
+            <div>
+
+              <h2 style="font-size:34px; font-weight:700; color:#222; line-height:48px;">
+                Fresh Fruits <br>
+                with amazing offers.
+              </h2>
+
+              <h4 style="color:#ff4d4d; font-weight:700; margin-top:20px;">
+                FROM 20% OFF
+              </h4>
+
+            </div>
+
+            <!-- YOUR IMAGE -->
+            <img src="img7.png"
+                 style="width:220px; object-fit:contain; margin-top: 10px;">
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="col-lg-6" style="padding-bottom: 40px;">
+
+          <div class="p-4 rounded-4 d-flex align-items-center justify-content-between"
+               style="background:#f7ef9f; min-height:230px;">
+
+            <div>
+
+              <h2 style="font-size:34px; font-weight:700; color:#222; line-height:48px;">
+                Capture The <br>
+                Delicious Moments
+              </h2>
+
+              <h4 style="color:#ff4d4d; font-weight:700; margin-top:20px;">
+                FROM 30% OFF
+              </h4>
+
+            </div>
+
+            <!-- YOUR IMAGE -->
+            <img src="img8.png"
+                 style="width:220px; object-fit:contain; ">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= BEST SELLERS SECTION (ADDED) ================= -->
+<section class="py-5">
+
+  <div class="container">
+
+    <h2 class="text-center fw-bold mb-4" style="font-size:42px; color:#003d33; margin-top: -80px;">
+      Best Sellers
+    </h2>
+
+    <p class="text-center mb-5" style="color:gray; font-size:18px;">
+      Add bestselling products to weekly line up
+    </p>
+
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="product-card text-center">
+
+          <img src="kiwi1.png"
+               style="width:150px;height:150px;object-fit:contain;margin:auto;">
+
+          <div style="color:gold; font-size:30px; margin:10px 0;">★★★★★</div>
+
+          <h4>Fresh Organic Kiwi</h4>
+          <h5>$10.00 - $70.00</h5>
+
+          <button class="btn btn-success mt-3 px-4 rounded-pill">
+            Add to Cart
+          </button>
+
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="product-card text-center">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3194/3194766.png"
+               style="width:150px;height:150px;object-fit:contain;margin:auto;">
+
+          <div style="color:gold; font-size:20px; margin:10px 0;">★★★★★</div>
+
+          <h4>Dried Mango</h4>
+          <h5>$10.00 - $70.00</h5>
+
+          <button class="btn btn-success mt-3 px-4 rounded-pill">
+            Add to Cart
+          </button>
+
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="product-card text-center">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/3143/3143643.png"
+               style="width:150px;height:150px;object-fit:contain;margin:auto;">
+
+          <div style="color:gold; font-size:20px; margin:10px 0;">★★★★★</div>
+
+          <h4>Dried Banana</h4>
+          <h5>$60.00 - $80.00</h5>
+
+          <button class="btn btn-success mt-3 px-4 rounded-pill">
+            Add to Cart
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ================= NEW ARRIVALS SECTION ================= -->
+
+<section class="arrivals py-5">
+
+  <div class="container">
+
+    <!-- HEADING -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+      <div>
+        <h2 style="font-size:40px; font-weight:700; color:#111;">
+          New Arrivals
+        </h2>
+
+        <p style="color:gray;">
+          Add new products to weekly line up
+        </p>
+      </div>
+
+      <div class="d-flex gap-2">
+
+        <button class="btn rounded-circle border"
+                style="width:45px; height:45px;">
+          <i class="ri-arrow-left-line"></i>
+        </button>
+
+        <button class="btn rounded-circle border"
+                style="width:45px; height:45px;">
+          <i class="ri-arrow-right-line"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <div class="arrival-grid">
+
+      <!-- CARD 1 -->
+      <div class="arrival-card">
+
+        <img src="kiwi.png" style="height:200px; width: 300px;">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Fresh organic kiwi</h4>
+
+        <h5>$10.00 - $70.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="arrival-card" >
+
+        <img src="banana.jpeg">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Dried banana</h4>
+
+        <h5>$60.00 - $80.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="arrival-card">
+
+        <img src="jewell.png">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Jewel cranberries</h4>
+
+        <h5>$60.00 - $67.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="arrival-card">
+
+        <img src="mango.png">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Dried mango</h4>
+
+        <h5>$10.00 - $70.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="arrival-card">
+
+        <img src="crisps.png">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Crunchy crisps</h4>
+
+        <h5>$50.00 - $90.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="arrival-card">
+
+        <img src="broccoll.png">
+
+        <div class="stars">★★★★★</div>
+
+        <h4>Fresh Broccoli</h4>
+
+        <h5>$60.00 - $68.00</h5>
+
+        <button>
+          <i class="ri-shopping-bag-4-line"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ================= BANNERS ================= -->
+
+    <div class="row g-4 mt-4">
+
+      <!-- LEFT -->
+      <div class="col-lg-8">
+
+        <div class="banner-box">
+
+          <div>
+
+            <h3>100% Natural Organic</h3>
+
+            <h1>Strawberry Velvet Cake</h1>
+
+            <h4>$30.66</h4>
+
+          </div>
+
+          <img src="natural.png">
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-4">
+
+        <div class="banner-box green-box">
+
+          <div>
+
+            <h3>Organic Nuts</h3>
+
+            <h4>$28.88</h4>
+
+          </div>
+
+          <img src="nuts.png">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= POPULAR CATEGORIES ================= -->
+
+    <div class="d-flex justify-content-between align-items-center mt-5 mb-4">
+
+      <div>
+
+        <h2 style="font-size:40px; font-weight:700; color:#111;">
+          Popular Categories
+        </h2>
+
+        <p style="color:gray;">
+          Some of our popular categories include grocery
+        </p>
+
+      </div>
+
+      <div class="d-flex gap-2">
+
+        <button class="btn rounded-circle border"
+                style="width:45px; height:45px;">
+          <i class="ri-arrow-left-line"></i>
+        </button>
+
+        <button class="btn rounded-circle border"
+                style="width:45px; height:45px;">
+          <i class="ri-arrow-right-line"></i>
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- CATEGORY GRID -->
+    <div class="category-grid">
+
+      <!-- BIG CARD -->
+      <div class="big-category">
+        <img src="dried.jpeg">
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="small-category">
+
+        <div>
+          <h4>Fresh Vegetables</h4>
+          <p>8 Products</p>
+        </div>
+
+        <img src="vag.png">
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="small-category">
+
+        <div>
+          <h4>Canned Goods</h4>
+          <p>10 Products</p>
+        </div>
+
+        <img src="good.png">
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="small-category">
+
+        <div>
+          <h4>Bread & Bakery</h4>
+          <p>9 Products</p>
+        </div>
+
+        <img src="bread.png">
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="small-category">
+
+        <div>
+          <h4>Eggs & Dairy</h4>
+          <p>18 Products</p>
+        </div>
+
+        <img src="eggs.png">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- ================= FOOTER ================= -->
+<footer style="background:#003d33; color:#fff; padding:60px 0 20px;">
+
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6">
+        <h2 style="font-weight:700; margin-bottom:15px;">Fresh</h2>
+        <p style="color:#cfe8e3;">
+          100% organic fruits and vegetables delivered fresh to your doorstep.
+          Eat healthy, live healthy.
+        </p>
+
+        <div style="margin-top:15px;">
+          <i class="ri-facebook-circle-fill" style="font-size:26px; margin-right:10px; cursor:pointer;"></i>
+          <i class="ri-instagram-fill" style="font-size:26px; margin-right:10px; cursor:pointer;"></i>
+          <i class="ri-twitter-fill" style="font-size:26px; cursor:pointer;"></i>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h5 style="margin-bottom:15px;">Quick Links</h5>
+        <ul style="list-style:none; padding:0; line-height:2;">
+          <li><a href="#" style="color:#cfe8e3; text-decoration:none;">Home</a></li>
+          <li><a href="#" style="color:#cfe8e3; text-decoration:none;">Shop</a></li>
+          <li><a href="#" style="color:#cfe8e3; text-decoration:none;">About</a></li>
+          <li><a href="#" style="color:#cfe8e3; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories -->
+      <div class="col-lg-3 col-md-6">
+        <h5 style="margin-bottom:15px;">Categories</h5>
+        <ul style="list-style:none; padding:0; line-height:2;">
+          <li style="color:#cfe8e3;">Fruits</li>
+          <li style="color:#cfe8e3;">Vegetables</li>
+          <li style="color:#cfe8e3;">Juices</li>
+          <li style="color:#cfe8e3;">Organic Foods</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h5 style="margin-bottom:15px;">Contact</h5>
+        <p style="color:#cfe8e3; margin:0;">📍 Pune, Maharashtra, India</p>
+        <p style="color:#cfe8e3; margin:0;">📞 +91 98765 43210</p>
+        <p style="color:#cfe8e3; margin:0;">✉️ support@fresh.com</p>
+      </div>
+
+    </div>
+
+    <hr style="margin:30px 0; border-color:#2e6b61;">
+
+    <div class="text-center" style="color:#cfe8e3;">
+      © 2026 Fresh Organic Store | All Rights Reserved
+    </div>
+
+  </div>
+
+</footer>
+
+</section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
